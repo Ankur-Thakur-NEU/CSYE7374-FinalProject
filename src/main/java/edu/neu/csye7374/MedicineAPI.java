@@ -1,4 +1,2 @@
-package edu.neu.csye7374;
-
-public interface MedicineAPI {
+package edu.neu.csye7374;public class MedicineAPI {
 }
