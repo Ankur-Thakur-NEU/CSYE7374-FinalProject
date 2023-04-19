@@ -11,7 +11,23 @@ public abstract class MedicineDecorator implements MedicineAPI {
     }
 
     @Override
-    Public String medicineDescription() {
-        return decoratorMedicine.medicineDescription;
+    public String medicineDescription() {
+        return decoratorMedicine.medicineDescription();
+    }
+
+    @Override
+    public int noOfMedicinesManufactured() {
+        return decoratorMedicine.noOfMedicinesManufactured();
+    }
+
+    public MedicineAPI getDecoratorMedicine() {
+        return this.decoratorMedicine;
+    }
+
+    @Override
+    public String toString() {
+        return "MedicineDecorator{" +
+                "decoratorMedicine=" + decoratorMedicine +
+                '}';
     }
 }
