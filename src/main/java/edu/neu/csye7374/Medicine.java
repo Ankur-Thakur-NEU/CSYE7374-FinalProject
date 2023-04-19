@@ -69,4 +69,15 @@ public class Medicine implements MedicineAPI {
     public double medicinePrice() {
         return 0;
     }
+
+    //Command Pattern
+    public String buyMedicine(){
+        return this.medicineName+" has been purchased"; //+"\n Price now ="+this.medicinePrice;
+    }
+    //Command Pattern
+    //5% discount on subscribing to a medicine
+    public String subscribeMedicine(){
+        this.medicinePrice= this.medicinePrice * 0.95;
+        return this.medicineName+ " has been added to your subscription list and you will get 5% discount on it from now onwards.";//+"\n Price now ="+this.medicinePrice;
+    }
 }
