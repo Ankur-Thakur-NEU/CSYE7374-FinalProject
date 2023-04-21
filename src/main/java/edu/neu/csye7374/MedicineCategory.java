@@ -1,14 +1,7 @@
 package edu.neu.csye7374;
 
 public enum MedicineCategory {
-    Prescription,
-    OverTheCounter,
-    Generic,
-    BrandName,
-    Biological,
-    Herbal,
-    ControlledSubstances;
-
+    Prescription, OverTheCounter, Generic, BrandName, Biological, Herbal, ControlledSubstances;
     public static MedicineCategory getMedicineCategory(String s) {
         MedicineCategory result;
         switch(s.toLowerCase()) {
