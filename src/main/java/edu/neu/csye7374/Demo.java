@@ -1,17 +1,20 @@
 package edu.neu.csye7374;
 
+import edu.neu.csye7374.Bridge.BrandedMedicineDispenser;
+import edu.neu.csye7374.Bridge.GenericMedicineDispenser;
+import edu.neu.csye7374.Bridge.MedicalService;
 import edu.neu.csye7374.Builder.MedicineBuilder;
 import edu.neu.csye7374.Builder.PharmacistBuilder;
 import edu.neu.csye7374.Command.Invoker;
 import edu.neu.csye7374.Facade.PharmacyFacade;
-import edu.neu.csye7374.Strategy.EmployeeDiscount;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Demo {
     public static void main(){
-
+        //Builder design pattern for medicines
+        System.out.println("******Builder design pattern********");
         Pharmacy pharmacy = new Pharmacy("My Pharmacy");
         // Add some medicines
         Medicine paracetamol = new MedicineBuilder(1, "Paracetamol",
@@ -24,8 +27,8 @@ public class Demo {
         pharmacy.itemList.add(amoxicillin);
 
         // Add some employees
-        Pharmacist alice = new Pharmacist(1, 30, "Alice", "Smith", 5000.0);
-        pharmacy.personList.add(alice);
+        Pharmacist pharmacist1 = new PharmacistBuilder(1,  "Alice", "Smith",30, 5000.0);
+        pharmacy.personList.add(pharmacist1);
 
         // Print out pharmacy details
         System.out.println("Pharmacy Name: " + pharmacy.name);
@@ -40,6 +43,8 @@ public class Demo {
                 System.out.println(pharmacist.getFirstName() + " " + pharmacist.getLastName() + " (Pharmacist)");
             }
         }
+        //Facade design pattern
+        System.out.println("******Facade design pattern********");
         PharmacyFacade pharmacyFacade = new PharmacyFacade("My Pharmacy");
         MedicineBuilder medicineBuilder = new MedicineBuilder(1, "Paracetamol",
                 10.0, MedicineCategory.OverTheCounter, "ABC Pharma");
@@ -54,12 +59,28 @@ public class Demo {
         pharmacyFacade.addPharmacist(pharmacistBuilder);
 
         PharmacistBuilder pharmacistBuilder1 = new PharmacistBuilder(2, "Alisha",
-                "Mary>", 27, 100000);
+                "Mary", 27, 100000);
         pharmacyFacade.addPharmacist(pharmacistBuilder1);
+        //Sorting the added medicines and employees
         pharmacyFacade.sortMedicines(pharmacyFacade.pharmacy);
         pharmacyFacade.sortEmployees();
 
-        //142
+        //Bridge design pattern
+        System.out.println("******Bridge design pattern********");
+        Medicine paracetamol1 = new MedicineBuilder(1, "Paracetamol",
+                10.0, MedicineCategory.OverTheCounter, "ABC Pharma")
+                .buildObject();
+        Medicine amoxicillin1 = new MedicineBuilder(2,"Amoxicillin", 20.0,
+                MedicineCategory.Prescription, "XYZ Pharma")
+                .buildObject();
+        Pharmacist pharmacist = new Pharmacist();
+        MedicalService brandedDispenser = new BrandedMedicineDispenser(paracetamol1, pharmacist);
+        brandedDispenser.dispenseMedicine();
+        MedicalService genericDispenser = new GenericMedicineDispenser(amoxicillin1, pharmacist);
+        genericDispenser.dispenseMedicine();
+
+
+
 
         List<Medicine> medicinelist = new ArrayList<>();
 
@@ -73,6 +94,7 @@ public class Demo {
 
         //Test for command pattern
         //creating medicine list before testing
+        System.out.println("******Command design pattern********");
         Medicine ciplox = new Medicine();
         ciplox.setMedicineName("ciplox");
         ciplox.setMedicinePrice(11);

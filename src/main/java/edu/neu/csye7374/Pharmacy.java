@@ -11,12 +11,9 @@ public class Pharmacy implements PharmacyAPI {
     String name;
     public List<Medicine> itemList = new ArrayList<>();
     public List<Person> personList = new ArrayList<>();
-
-    private PharmacyStateAPI state;
     public Pharmacy(String name) {
         super();
         this.name = name;
-        //this.state = getOpenState();
     }
     @Override
     public void addMedicines() {
@@ -32,6 +29,10 @@ public class Pharmacy implements PharmacyAPI {
                 return m1.getMedicineName().compareTo(m2.getMedicineName());
             }
         });
+        System.out.println("Sorted medicine list");
+        for(Medicine medicine: itemList){
+            System.out.println(medicine.medicineName);
+        }
     }
     @Override
     public void sortEmployees() {
@@ -42,5 +43,9 @@ public class Pharmacy implements PharmacyAPI {
                 return CharSequence.compare(p1.getFirstName(), p2.getFirstName());
             }
         });
+        System.out.println("Sorted pharmacist list");
+        for(Person person: personList){
+            System.out.println(person.getFirstName());
+        }
     }
 }

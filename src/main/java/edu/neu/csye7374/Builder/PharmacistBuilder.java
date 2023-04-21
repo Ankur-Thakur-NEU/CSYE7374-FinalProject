@@ -3,7 +3,7 @@ package edu.neu.csye7374.Builder;
 import edu.neu.csye7374.Factory.PharmacistFactory;
 import edu.neu.csye7374.Pharmacist;
 
-public class PharmacistBuilder implements BuilderAPI<Pharmacist> {
+public class PharmacistBuilder extends Pharmacist implements BuilderAPI<Pharmacist> {
     private int id;
     private String firstName;
     private String lastName;

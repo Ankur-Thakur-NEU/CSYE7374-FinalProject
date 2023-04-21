@@ -1,5 +1,6 @@
 package edu.neu.csye7374;
 
+import edu.neu.csye7374.Bridge.MedicalService;
 import edu.neu.csye7374.Builder.MedicineBuilder;
 
 public class Medicine implements MedicineAPI {
@@ -9,8 +10,12 @@ public class Medicine implements MedicineAPI {
     public MedicineCategory medicineCategory;
     public String medicineManufacturer;
 
-    public Medicine() {
+    private MedicalService medicalService;
 
+    public Medicine(MedicalService medicalService) {
+        this.medicalService = medicalService;
+    }
+    public Medicine() {
     }
 
     public int getMedicineId() {
@@ -82,7 +87,6 @@ public class Medicine implements MedicineAPI {
         this.medicinePrice = medicineBuilder.medicinePrice;
         this.medicineManufacturer = medicineBuilder.medicineManufacturer;
         this.medicineCategory = medicineBuilder.medicineCategory;
-
     }
     public Medicine(int medicineId, String medicineName,
                     double medicinePrice, String medicineManufacturer, MedicineCategory medicineCategory) {

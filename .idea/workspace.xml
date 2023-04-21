@@ -5,49 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a6232ff-3d1d-44f1-a2c2-1b85ccf3172e" name="Changes" comment="Added Driver Class">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Builder/PharmacistBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Facade/PharmacyFacade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Factory/AbstractFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Factory/MedicineFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Factory/PharmacistFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Bridge/BrandedMedicineDispenser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Bridge/GenericMedicineDispenser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Bridge/MedicalService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Builder/BuilderAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Builder/BuilderAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Builder/EmployeeBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Builder/MedicineBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Builder/MedicineBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Decorator_Pattern/MedicineDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Decorator/MedicineDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Builder/PharmacistBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Builder/PharmacistBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Demo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Facade/PharmacyFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Facade/PharmacyFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Medicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Medicine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/MedicineAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/MedicineAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/MedicineCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/MedicineCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Pharmacist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Pharmacist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Pharmacy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Pharmacy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/Builder/BuilderAPI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/Builder/EmployeeBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/Builder/MedicineBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/Command/BuyMedicineCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/Command/CommandAPI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/Command/Invoker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/Command/SubscribeMedicineCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/ConvertUtility.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/Decorator_Pattern/MedicineDecorator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/Demo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/Driver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/FileUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/Medicine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/MedicineAPI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/MedicineCategory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/Person.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/Pharmacist.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/Pharmacy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/PharmacyAPI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/StatePattern/PharmacyStateAPI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/Strategy/DiscountAPI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/Strategy/EmployeeDiscount.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/Strategy/MembershipDiscount.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye7374/Strategy/StudentDiscount.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
