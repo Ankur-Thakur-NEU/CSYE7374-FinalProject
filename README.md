@@ -1,5 +1,5 @@
 # CSYE7374-FinalProject
-# Final Project: Library Management using Design Pattern
+# Final Project: Pharmacy Management using Design Pattern
 # Group members
 1. Saitarun Movva
 2. Aamrah Aamrah
