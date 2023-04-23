@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a6232ff-3d1d-44f1-a2c2-1b85ccf3172e" name="Changes" comment="Added Driver Class">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Bridge/BrandedMedicineDispenser.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Bridge/GenericMedicineDispenser.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Bridge/MedicalService.java" afterDir="false" />
@@ -15,6 +16,14 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Medicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Medicine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Pharmacist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Pharmacist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Pharmacy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Pharmacy.java" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/StatePattern/Pharmacy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Strategy/DiscountStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Medicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Medicine.java" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +56,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< Updated upstream
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -54,6 +64,20 @@
     "last_opened_file_path": "/Users/alishaangalan/Desktop/Project/CSYE7374-FinalProject"
   }
 }]]></component>
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/aamrah/Desktop/Courses/dp/Project-New/CSYE7374-FinalProject/src/main/java/edu/neu/csye7374&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  }
+}</component>
+>>>>>>> Stashed changes
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/edu/neu/csye7374" />

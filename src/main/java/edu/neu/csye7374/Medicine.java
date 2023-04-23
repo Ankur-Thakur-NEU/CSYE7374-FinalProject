@@ -80,6 +80,7 @@ public class Medicine implements MedicineAPI {
         this.medicinePrice= this.medicinePrice * 0.95;
         return this.medicineName+ " has been added to your subscription list and you will get 5% discount on it from now onwards.";//+"\n Price now ="+this.medicinePrice;
     }
+
     public Medicine(MedicineBuilder medicineBuilder){
         super();
         this.medicineId = medicineBuilder.medicineId;
@@ -96,6 +97,16 @@ public class Medicine implements MedicineAPI {
         this.medicinePrice = medicinePrice;
         this.medicineManufacturer = medicineManufacturer;
         this.medicineCategory = medicineCategory;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Medicine{" +
+                "medicineName='" + medicineName + '\'' +
+                ", medicinePrice=" + medicinePrice +
+                '}';
     }
 
 }

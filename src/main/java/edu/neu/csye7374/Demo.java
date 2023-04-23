@@ -7,6 +7,10 @@ import edu.neu.csye7374.Builder.MedicineBuilder;
 import edu.neu.csye7374.Builder.PharmacistBuilder;
 import edu.neu.csye7374.Command.Invoker;
 import edu.neu.csye7374.Facade.PharmacyFacade;
+import edu.neu.csye7374.Strategy.DiscountAPI;
+import edu.neu.csye7374.Strategy.DiscountStrategy;
+import edu.neu.csye7374.Strategy.EmployeeDiscount;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,6 +97,7 @@ public class Demo {
         //Test for facade pattern and decorator pattern
 
         //Test for command pattern
+        System.out.println("******************* Command Design Pattern *******************");
         //creating medicine list before testing
         System.out.println("******Command design pattern********");
         Medicine ciplox = new Medicine();
@@ -116,7 +121,11 @@ public class Demo {
         //Test for State Pattern
 
         //Test for Strategy Pattern
+        System.out.println("******************* Strategy Design Pattern *******************");
 
+        System.out.println("Medicine before discount"+ciplox.getMedicinePrice());
+        double price =0;
+//        for(DiscountStrategy strategy : Pharmacy.class.get)
 
     }
 }
