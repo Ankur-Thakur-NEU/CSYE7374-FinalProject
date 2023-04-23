@@ -2,6 +2,7 @@ package edu.neu.csye7374;
 
 import edu.neu.csye7374.Bridge.MedicalService;
 import edu.neu.csye7374.Builder.MedicineBuilder;
+import edu.neu.csye7374.Strategy.DiscountStrategy;
 
 public class Medicine implements MedicineAPI {
     public int medicineId;
@@ -99,8 +100,27 @@ public class Medicine implements MedicineAPI {
         this.medicineCategory = medicineCategory;
     }
 
-
-
+    public double runStrategy() {
+        double value = 0;
+        switch (Pharmacy.getStrategy()) {
+            case EMPLOYEE_DISCOUNT -> {
+                value = Pharmacy.getStrategyAPIMap().get(DiscountStrategy.EMPLOYEE_DISCOUNT).calculatePrice(this);
+                break;
+            }
+            case STUDENT_DISCOUNT -> {
+                value = Pharmacy.getStrategyAPIMap().get(DiscountStrategy.STUDENT_DISCOUNT).calculatePrice(this);
+                break;
+            }
+            case MEMBERSHIP_DISCOUNT -> {
+                value = Pharmacy.getStrategyAPIMap().get(DiscountStrategy.MEMBERSHIP_DISCOUNT).calculatePrice(this);
+                break;
+            }
+            default -> {
+                value = medicinePrice;
+            }
+        }
+        return value;
+    }
     @Override
     public String toString() {
         return "Medicine{" +

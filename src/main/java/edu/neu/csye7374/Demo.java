@@ -18,7 +18,7 @@ import java.util.List;
 public class Demo {
     public static void main(){
         //Builder design pattern for medicines
-        System.out.println("******Builder design pattern********");
+        System.out.println("******************* Builder design pattern******************* ");
         Pharmacy pharmacy = new Pharmacy("My Pharmacy");
         // Add some medicines
         Medicine paracetamol = new MedicineBuilder(1, "Paracetamol",
@@ -48,7 +48,7 @@ public class Demo {
             }
         }
         //Facade design pattern
-        System.out.println("******Facade design pattern********");
+        System.out.println("******************* Facade design pattern******************* ");
         PharmacyFacade pharmacyFacade = new PharmacyFacade("My Pharmacy");
         MedicineBuilder medicineBuilder = new MedicineBuilder(1, "Paracetamol",
                 10.0, MedicineCategory.OverTheCounter, "ABC Pharma");
@@ -70,7 +70,7 @@ public class Demo {
         pharmacyFacade.sortEmployees();
 
         //Bridge design pattern
-        System.out.println("******Bridge design pattern********");
+        System.out.println("******************* Bridge design pattern******************* ");
         Medicine paracetamol1 = new MedicineBuilder(1, "Paracetamol",
                 10.0, MedicineCategory.OverTheCounter, "ABC Pharma")
                 .buildObject();
@@ -115,7 +115,8 @@ public class Demo {
         invoker.subscribeOrder(medicinelist);
 
 
-//        MedicineStore cvs = new MedicineStore("CVS");
+        Pharmacy cvs = new Pharmacy("CVS");
+
 //        EmployeeBuilder emploee = new EmployeeBuilder(vals);
 
         //Test for State Pattern
@@ -123,9 +124,13 @@ public class Demo {
         //Test for Strategy Pattern
         System.out.println("******************* Strategy Design Pattern *******************");
 
-        System.out.println("Medicine before discount"+ciplox.getMedicinePrice());
+        System.out.println("Medicine \""+ciplox.getMedicineName()+"\" price before discount "+ciplox.getMedicinePrice());
         double price =0;
-//        for(DiscountStrategy strategy : Pharmacy.class.get)
+        for(DiscountStrategy strategy : Pharmacy.getStrategyAPIMap().keySet()){
+            cvs.setStrategy(strategy);
+            price= ((Medicine)ciplox).runStrategy();
+            System.out.println("Price of \""+ciplox.getMedicineName()+"\" after "+strategy+" :"+price);
+        }
 
     }
 }
