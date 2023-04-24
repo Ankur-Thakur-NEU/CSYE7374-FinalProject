@@ -117,7 +117,7 @@ public class Demo {
         System.out.println(manufacturerPrototype2.toString());
 
         //Test for adapter pattern
-        System.out.println("start adapter demo//////////////////***************************************************************");
+        System.out.println("******************* Adapter Design Pattern *******************");
         MedicineBuilder medicineBuilder2 = new MedicineBuilder(1, "Dolo", 10, MedicineCategory.OverTheCounter, "abc labs");
         MedicineAPI medicine= MedicineFactory.getInstance().getObject(medicineBuilder2);
         medicinelist.add((Medicine)medicine);
@@ -136,7 +136,7 @@ public class Demo {
         System.out.println("***************************************************************************************");
 
 // test observer
-        System.out.println("*************observer demo start********");
+        System.out.println("******************* Observer Design Pattern *******************");
         Medicine medicine1 = new Medicine(1, "Aspirin", 150.0, "Bayer", MedicineCategory.OverTheCounter);
         Medicine medicine2 = new Medicine(2, "Tylenol", 200.0, "Johnson & Johnson", MedicineCategory.OverTheCounter);
         Medicine medicine3 = new Medicine(3, "Advil", 180.0, "Pfizer", MedicineCategory.OverTheCounter);
@@ -171,8 +171,6 @@ public class Demo {
         System.out.println("Order shipping cost: " + order.getShippingCost());
         System.out.println("Order discount: " + order.getDiscount());
         System.out.println("Order total: " + order.getTotal());
-
-        System.out.println("*************observer demo start end********");
         //Test for facade pattern and decorator pattern
 
 
