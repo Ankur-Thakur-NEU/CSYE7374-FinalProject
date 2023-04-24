@@ -14,7 +14,7 @@ public class GiftcardDecorator extends MedicineDecorator {
     @Override
     public String medicineDescription() {
         // TODO Auto-generated method stub
-        return decoratorMedicine.medicineDescription()+ "..Wrapped for gift along with a pen";
+        return decoratorMedicine.medicineDescription()+ " + Free Gift Card of $10";
     }
 
     @Override

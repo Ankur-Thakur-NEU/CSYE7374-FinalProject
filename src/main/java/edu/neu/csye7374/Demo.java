@@ -8,6 +8,7 @@ import edu.neu.csye7374.Bridge.MedicalService;
 import edu.neu.csye7374.Builder.MedicineBuilder;
 import edu.neu.csye7374.Builder.PharmacistBuilder;
 import edu.neu.csye7374.Command.Invoker;
+import edu.neu.csye7374.Decorator.HealthKitDecorator;
 import edu.neu.csye7374.Facade.DeliveryType;
 import edu.neu.csye7374.Facade.PharmacyFacade;
 import edu.neu.csye7374.Factory.MedicineFactory;
@@ -93,9 +94,27 @@ public class Demo {
 
         List<Medicine> medicinelist = new ArrayList<>();
 
+        System.out.println("******************* Decorator Design Pattern *******************");
+
+        // Decortor Design Pattern
+        MedicineAPI decoratorMedicine=  new Medicine(101, "Aspirin", 150.0, "Bayer", MedicineCategory.OverTheCounter);
+        decoratorMedicine= new edu.neu.csye7374.Decorator_Pattern.GiftcardDecorator(decoratorMedicine);
+        System.out.println("Gift card has been added :\n"+decoratorMedicine.medicineDescription());
+        decoratorMedicine= new HealthKitDecorator(decoratorMedicine);
+        System.out.println("Health Kit has been added:"+decoratorMedicine.medicineDescription());
+
         //Test for builder pattern - using factory and singleton
 
         //Test for prototype pattern
+        System.out.println("******************* Prototype Design Pattern *******************");
+        Manufacturer manufacturerPrototype = Manufacturer.getInstance().clone();
+        manufacturerPrototype.setManufacturerName("Pfizer")
+                .setYearsOfManufacturing(50)
+                .setProductsManufactured(10);
+        System.out.println(manufacturerPrototype.toString());
+        Manufacturer manufacturerPrototype2 = (Manufacturer) manufacturerPrototype.clone();
+        manufacturerPrototype2.setManufacturerName("Seloni");
+        System.out.println(manufacturerPrototype2.toString());
 
         //Test for adapter pattern
         System.out.println("start adapter demo//////////////////***************************************************************");

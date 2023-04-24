@@ -2,6 +2,8 @@ package edu.neu.csye7374.Facade;
 
 import edu.neu.csye7374.Builder.MedicineBuilder;
 import edu.neu.csye7374.Builder.PharmacistBuilder;
+import edu.neu.csye7374.Decorator.MedicineDecorator;
+import edu.neu.csye7374.Decorator_Pattern.GiftcardDecorator;
 import edu.neu.csye7374.Medicine;
 import edu.neu.csye7374.Person;
 import edu.neu.csye7374.Pharmacist;
@@ -14,6 +16,8 @@ public class PharmacyFacade {
     }
     public void addMedicine(MedicineBuilder medicineBuilder) {
         Medicine medicine = new Medicine(medicineBuilder);
+//        MedicineDecorator medicneDecoratorBook = new GiftcardDecorator(medicine);
+//        System.out.println(medicneDecoratorBook);
         pharmacy.itemList.add(medicine);
         System.out.println("List of medicines in the item list");
         for(Medicine medicine1: pharmacy.itemList){
