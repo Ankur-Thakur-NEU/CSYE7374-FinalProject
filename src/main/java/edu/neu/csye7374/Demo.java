@@ -7,6 +7,7 @@ import edu.neu.csye7374.Builder.MedicineBuilder;
 import edu.neu.csye7374.Builder.PharmacistBuilder;
 import edu.neu.csye7374.Command.Invoker;
 import edu.neu.csye7374.Facade.PharmacyFacade;
+import edu.neu.csye7374.Observer.Order;
 import edu.neu.csye7374.Strategy.DiscountAPI;
 import edu.neu.csye7374.Strategy.DiscountStrategy;
 import edu.neu.csye7374.Strategy.EmployeeDiscount;
@@ -120,6 +121,15 @@ public class Demo {
 //        EmployeeBuilder emploee = new EmployeeBuilder(vals);
 
         //Test for State Pattern
+        System.out.println("******************* State Design Pattern *******************");
+        //Dummy order
+        Order order = new Order();
+        order.orderConfirmed();
+        order.orderDelivered();
+        order.orderDispatched();
+        order.orderDelivered();
+        order.closeOrder();
+
 
         //Test for Strategy Pattern
         System.out.println("******************* Strategy Design Pattern *******************");

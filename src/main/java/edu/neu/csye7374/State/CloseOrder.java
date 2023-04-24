@@ -1,19 +1,32 @@
 package edu.neu.csye7374.State;
 
-public class CloseOrder implements PharmacyStateAPI{
+import edu.neu.csye7374.Observer.Order;
 
-    @Override
-    public void open() {
+public class CloseOrder implements OrderStateAPI{
+    private Order order;
 
+    public CloseOrder(Order order) {
+        super();
+        this.order = order;
     }
 
     @Override
-    public void close() {
-
+    public void orderConfirmed() {
+        System.out.println("Error!! Order has already been closed.");
     }
 
     @Override
-    public void stock_status() {
+    public void orderDispatched() {
+        System.out.println("Error!! Order has already been closed.");
+    }
 
+    @Override
+    public void orderDelivered() {
+        System.out.println("Error!! Order has already been closed.");
+    }
+
+    @Override
+    public void closeOrder() {
+        System.out.println("Error!! Order has already been closed.");
     }
 }
