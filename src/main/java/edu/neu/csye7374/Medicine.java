@@ -69,7 +69,7 @@ public class Medicine implements MedicineAPI {
     }
     @Override
     public double medicinePrice() {
-        return 0;
+        return getMedicinePrice();
     }
     //Command Pattern
     public String buyMedicine(){

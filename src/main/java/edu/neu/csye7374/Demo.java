@@ -8,6 +8,7 @@ import edu.neu.csye7374.Bridge.MedicalService;
 import edu.neu.csye7374.Builder.MedicineBuilder;
 import edu.neu.csye7374.Builder.PharmacistBuilder;
 import edu.neu.csye7374.Command.Invoker;
+import edu.neu.csye7374.Facade.DeliveryType;
 import edu.neu.csye7374.Facade.PharmacyFacade;
 import edu.neu.csye7374.Factory.MedicineFactory;
 import edu.neu.csye7374.Observer.Order;
@@ -115,8 +116,30 @@ public class Demo {
         System.out.println(manufacturerAdapter);
         System.out.println("***************************************************************************************");
 
+// test observer
+        System.out.println("*************observer demo start********");
+        Order order = new Order();
+        System.out.println(order);
+        order.setDeliveryType(DeliveryType.Delivery);
+        medicineBuilder2 = new MedicineBuilder(1, "Dolo", 100, MedicineCategory.OverTheCounter, "abc labs");
+        medicine=MedicineFactory.getInstance().getObject(medicineBuilder2);
+        order.addMedicine(medicine);
+        System.out.println(order);
+        medicinelist.add((Medicine)medicine);
+        medicineBuilder2 = new MedicineBuilder(2, "ser", 102, MedicineCategory.OverTheCounter, "abc labs");
+        medicine=MedicineFactory.getInstance().getObject(medicineBuilder2);
+        order.addMedicine(medicine);
+        System.out.println(order);
+        medicinelist.add((Medicine)medicine);
+        medicineBuilder2 = new MedicineBuilder(1, "mass", 30100, MedicineCategory.OverTheCounter, "abc labs");
+        medicine=MedicineFactory.getInstance().getObject(medicineBuilder2);
+        order.addMedicine(medicine);
+        System.out.println(order);
+        medicinelist.add((Medicine)medicine);
 
+        System.out.println("*************observer demo start end********");
         //Test for facade pattern and decorator pattern
+
 
         //Test for command pattern
         System.out.println("******************* Command Design Pattern *******************");
@@ -144,12 +167,12 @@ public class Demo {
         //Test for State Pattern
         System.out.println("******************* State Design Pattern *******************");
         //Dummy order
-        Order order = new Order();
-        order.orderConfirmed();
-        order.orderDelivered();
-        order.orderDispatched();
-        order.orderDelivered();
-        order.closeOrder();
+//        Order order = new Order();
+//        order.orderConfirmed();
+//        order.orderDelivered();
+//        order.orderDispatched();
+//        order.orderDelivered();
+//        order.closeOrder();
 
 
         //Test for Strategy Pattern
