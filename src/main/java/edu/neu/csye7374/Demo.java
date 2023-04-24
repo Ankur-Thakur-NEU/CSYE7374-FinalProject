@@ -203,12 +203,12 @@ public class Demo {
         //Test for State Pattern
         System.out.println("******************* State Design Pattern *******************");
         //Dummy order
-//        Order order = new Order();
-//        order.orderConfirmed();
-//        order.orderDelivered();
-//        order.orderDispatched();
-//        order.orderDelivered();
-//        order.closeOrder();
+        Order orderForState = new Order();
+        orderForState.orderConfirmed();
+        orderForState.orderDelivered();
+        orderForState.orderDispatched();
+        orderForState.orderDelivered();
+        orderForState.closeOrder();
 
 
         //Test for Strategy Pattern
