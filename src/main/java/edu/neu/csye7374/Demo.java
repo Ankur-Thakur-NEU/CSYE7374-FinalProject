@@ -117,10 +117,9 @@ public class Demo {
         System.out.println(manufacturerPrototype2.toString());
 
         //Test for adapter pattern
-        System.out.println("start adapter demo//////////////////***************************************************************");
+        System.out.println("*********************start adapter demo***************************************************************");
         MedicineBuilder medicineBuilder2 = new MedicineBuilder(1, "Dolo", 10, MedicineCategory.OverTheCounter, "abc labs");
         MedicineAPI medicine= MedicineFactory.getInstance().getObject(medicineBuilder2);
-        medicinelist.add((Medicine)medicine);
         System.out.println(medicine);
         Manufacturer manufacturer = Manufacturer.getInstance().clone();
         manufacturer.setManufacturerName("abc labs")
@@ -129,17 +128,19 @@ public class Demo {
         ManufacturerObjectAdapter manufacturerAdapter = new ManufacturerObjectAdapter(manufacturer,medicine);
 
         System.out.println(medicine);
-        System.out.println("***************************************************************************************");
-        System.out.println("Demonstrating of Adapter pattern to adapt manufacturer legacy class with Medicine Interface and printing their object");
+        System.out.println("*Demonstrating of Adapter pattern to adapt manufacturer legacy class with Medicine Interface and printing their object*");
 
         System.out.println(manufacturerAdapter);
         System.out.println("***************************************************************************************");
 
 // test observer
-        System.out.println("*************observer demo start********");
-        Medicine medicine1 = new Medicine(1, "Aspirin", 150.0, "Bayer", MedicineCategory.OverTheCounter);
-        Medicine medicine2 = new Medicine(2, "Tylenol", 200.0, "Johnson & Johnson", MedicineCategory.OverTheCounter);
-        Medicine medicine3 = new Medicine(3, "Advil", 180.0, "Pfizer", MedicineCategory.OverTheCounter);
+        System.out.println("*************observer demo start***************************************************");
+        MedicineBuilder medicineBuilder_1 = new MedicineBuilder(1, "Aspirin", 150.0, MedicineCategory.OverTheCounter,"Bayer");
+        MedicineAPI medicine1= MedicineFactory.getInstance().getObject(medicineBuilder_1);
+        MedicineBuilder medicineBuilder_2  = new MedicineBuilder(2, "Tylenol", 200.0, MedicineCategory.OverTheCounter, "Johnson & Johnson");
+        MedicineAPI medicine2= MedicineFactory.getInstance().getObject(medicineBuilder_2);
+        MedicineBuilder medicineBuilder_3  = new MedicineBuilder(3, "Advil", 1800.0, MedicineCategory.OverTheCounter, "Pfizer");
+        MedicineAPI medicine3= MedicineFactory.getInstance().getObject(medicineBuilder_3);
 
         // Create a new Order
         Order order = new Order();
@@ -147,7 +148,7 @@ public class Demo {
 
         // Add Medicine to the Order
         System.out.println("Adding Medicine1 to the order...");
-        order.addMedicine(medicine1);
+        order.addMedicine((Medicine)medicine1);
         System.out.println("Order cost: " + order.getOrderCost());
         System.out.println("Order quantity: " + order.getCount());
         System.out.println("Order shipping cost: " + order.getShippingCost());
@@ -156,7 +157,7 @@ public class Demo {
 
         // Add Medicine2 to the Order
         System.out.println("\nAdding Medicine2 to the order...");
-        order.addMedicine(medicine2);
+        order.addMedicine((Medicine)medicine2);
         System.out.println("Order cost: " + order.getOrderCost());
         System.out.println("Order quantity: " + order.getCount());
         System.out.println("Order shipping cost: " + order.getShippingCost());
@@ -165,14 +166,14 @@ public class Demo {
 
         // Add Medicine3 to the Order
         System.out.println("\nAdding Medicine3 to the order...");
-        order.addMedicine(medicine3);
+        order.addMedicine((Medicine)medicine3);
         System.out.println("Order cost: " + order.getOrderCost());
         System.out.println("Order quantity: " + order.getCount());
         System.out.println("Order shipping cost: " + order.getShippingCost());
         System.out.println("Order discount: " + order.getDiscount());
         System.out.println("Order total: " + order.getTotal());
 
-        System.out.println("*************observer demo start end********");
+        System.out.println("*************observer demo  end***************************************");
         //Test for facade pattern and decorator pattern
 
 
