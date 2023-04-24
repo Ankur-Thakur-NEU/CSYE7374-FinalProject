@@ -1,4 +1,4 @@
-package edu.neu.csye7374.Decorator_Pattern;
+package edu.neu.csye7374.Decorator;
 
 import edu.neu.csye7374.Decorator.MedicineDecorator;
 import edu.neu.csye7374.Medicine;

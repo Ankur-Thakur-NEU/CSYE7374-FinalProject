@@ -1,12 +1,12 @@
 package edu.neu.csye7374.Prototype;
 
-public abstract class DeliveryType implements Cloneable {
+public abstract class StoreDeliveryType implements Cloneable {
     private int deliveryId;
     private String deliveryType;
     private double deliveryCost;
 
 
-    public DeliveryType(int deliveryId, String deliveryType, double deliveryCost) {
+    public StoreDeliveryType(int deliveryId, String deliveryType, double deliveryCost) {
         super();
         this.deliveryId = deliveryId;
         this.deliveryType = deliveryType;
@@ -40,8 +40,7 @@ public abstract class DeliveryType implements Cloneable {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        // TODO Auto-generated method stub
+    public Object clone() {
         Object clone = null;
 
         try {
