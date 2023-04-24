@@ -134,7 +134,7 @@ public class Demo {
         System.out.println("***************************************************************************************");
 
 // test observer
-        System.out.println("******************* Observer Design Pattern *******************");
+        System.out.println("******************* Observer and state Design Pattern *******************");
         MedicineBuilder medicineBuilder_1 = new MedicineBuilder(1, "Aspirin", 150.0, MedicineCategory.OverTheCounter,"Bayer");
         MedicineAPI medicine1= MedicineFactory.getInstance().getObject(medicineBuilder_1);
         MedicineBuilder medicineBuilder_2  = new MedicineBuilder(2, "Tylenol", 200.0, MedicineCategory.OverTheCounter, "Johnson & Johnson");
@@ -172,6 +172,11 @@ public class Demo {
         System.out.println("Order shipping cost: " + order.getShippingCost());
         System.out.println("Order discount: " + order.getDiscount());
         System.out.println("Order total: " + order.getTotal());
+        order.orderConfirmed();
+        order.orderDelivered();
+        order.orderDispatched();
+        order.orderDelivered();
+        order.closeOrder();
 
         System.out.println("*************observer demo  end***************************************");
         //Test for facade pattern and decorator pattern
@@ -201,15 +206,15 @@ public class Demo {
 //        EmployeeBuilder emploee = new EmployeeBuilder(vals);
 
         //Test for State Pattern
-        System.out.println("******************* State Design Pattern *******************");
-        //Dummy order
-        Order orderForState = new Order();
-        orderForState.orderConfirmed();
-        orderForState.orderDelivered();
-        orderForState.orderDispatched();
-        orderForState.orderDelivered();
-        orderForState.closeOrder();
-
+//        System.out.println("******************* State Design Pattern *******************");
+//        //Dummy order
+////        Order orderForState = new Order();
+////        orderForState.orderConfirmed();
+////        orderForState.orderDelivered();
+////        orderForState.orderDispatched();
+////        orderForState.orderDelivered();
+////        orderForState.closeOrder();
+//
 
         //Test for Strategy Pattern
         System.out.println("******************* Strategy Design Pattern *******************");

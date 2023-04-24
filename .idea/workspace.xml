@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a6232ff-3d1d-44f1-a2c2-1b85ccf3172e" name="Changes" comment="Added Driver Class">
+    <list default="true" id="7a6232ff-3d1d-44f1-a2c2-1b85ccf3172e" name="Changes" comment="updated observer demo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Demo.java" afterDir="false" />
     </list>
@@ -84,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681783797812</updated>
-      <workItem from="1682344636599" duration="11652000" />
+      <workItem from="1682344636599" duration="15180000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed Compilation error">
       <created>1681783900119</created>
@@ -100,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681783918107</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="updated observer demo">
+      <created>1682367791678</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682367791678</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +127,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed Compilation error" />
     <MESSAGE value="Added Driver Class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Driver Class" />
+    <MESSAGE value="updated observer demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated observer demo" />
   </component>
 </project>
