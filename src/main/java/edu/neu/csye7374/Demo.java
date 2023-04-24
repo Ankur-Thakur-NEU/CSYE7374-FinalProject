@@ -109,14 +109,16 @@ public class Demo {
 
         //Test for prototype pattern
         System.out.println("******************* Prototype Design Pattern *******************");
-        HomeStoreDelivery homeDelivery = new HomeStoreDelivery(1, "Home Delivery", 10.0);
+        Order orderForPrototype = new Order();
+        orderForPrototype.setDeliveryType(DeliveryType.Delivery);
+        HomeStoreDelivery homeDelivery = new HomeStoreDelivery(1, "Home Delivery", 10.0, orderForPrototype);
         System.out.println(homeDelivery.toString());
         HomeStoreDelivery homeDelivery2 = homeDelivery.clone();
         homeDelivery2.setDeliveryType("Home Delivery 2");
         homeDelivery2.setDeliveryCost(40.0);
         System.out.println(homeDelivery2.toString());
 
-        StorePickUp storePickUp = new StorePickUp(1, "Store Pick Up", 0.0);
+        StorePickUp storePickUp = new StorePickUp(1, "Store Pick Up", 0.0, orderForPrototype);
         System.out.println(storePickUp.toString());
         StorePickUp storePickUp2 = storePickUp.clone();
         storePickUp2.setDeliveryType("Store Pickup 2");
