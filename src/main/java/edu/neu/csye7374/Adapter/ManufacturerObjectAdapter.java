@@ -14,6 +14,14 @@ public class ManufacturerObjectAdapter implements MedicineAPI {
     }
 
     @Override
+    public String toString() {
+        return "ManufacturerObjectAdapter{" +
+                "manufacturer=" + manufacturer +
+                ", medicine=" + medicine +
+                '}';
+    }
+
+    @Override
     public String medicineDescription() {
         return medicine.medicineDescription();
     }

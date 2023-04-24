@@ -1,5 +1,7 @@
 package edu.neu.csye7374;
 
+import edu.neu.csye7374.Adapter.Manufacturer;
+import edu.neu.csye7374.Adapter.ManufacturerObjectAdapter;
 import edu.neu.csye7374.Bridge.BrandedMedicineDispenser;
 import edu.neu.csye7374.Bridge.GenericMedicineDispenser;
 import edu.neu.csye7374.Bridge.MedicalService;
@@ -7,6 +9,7 @@ import edu.neu.csye7374.Builder.MedicineBuilder;
 import edu.neu.csye7374.Builder.PharmacistBuilder;
 import edu.neu.csye7374.Command.Invoker;
 import edu.neu.csye7374.Facade.PharmacyFacade;
+import edu.neu.csye7374.Factory.MedicineFactory;
 import edu.neu.csye7374.Observer.Order;
 import edu.neu.csye7374.Strategy.DiscountAPI;
 import edu.neu.csye7374.Strategy.DiscountStrategy;
@@ -94,6 +97,24 @@ public class Demo {
         //Test for prototype pattern
 
         //Test for adapter pattern
+        System.out.println("start adapter demo//////////////////***************************************************************");
+        MedicineBuilder medicineBuilder2 = new MedicineBuilder(1, "Dolo", 10, MedicineCategory.OverTheCounter, "abc labs");
+        MedicineAPI medicine= MedicineFactory.getInstance().getObject(medicineBuilder2);
+        medicinelist.add((Medicine)medicine);
+        System.out.println(medicine);
+        Manufacturer manufacturer = Manufacturer.getInstance().clone();
+        manufacturer.setManufacturerName("abc labs")
+                .setYearsOfManufacturing(52)
+                .setProductsManufactured(10);
+        ManufacturerObjectAdapter manufacturerAdapter = new ManufacturerObjectAdapter(manufacturer,medicine);
+
+        System.out.println(medicine);
+        System.out.println("***************************************************************************************");
+        System.out.println("Demonstrating of Adapter pattern to adapt manufacturer legacy class with Medicine Interface and printing their object");
+
+        System.out.println(manufacturerAdapter);
+        System.out.println("***************************************************************************************");
+
 
         //Test for facade pattern and decorator pattern
 
