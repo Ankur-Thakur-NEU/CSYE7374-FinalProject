@@ -117,7 +117,7 @@ public class Demo {
         System.out.println(manufacturerPrototype2.toString());
 
         //Test for adapter pattern
-        System.out.println("*********************start adapter demo***************************************************************");
+        System.out.println("******************* Adapter Design Pattern *******************");
         MedicineBuilder medicineBuilder2 = new MedicineBuilder(1, "Dolo", 10, MedicineCategory.OverTheCounter, "abc labs");
         MedicineAPI medicine= MedicineFactory.getInstance().getObject(medicineBuilder2);
         System.out.println(medicine);
@@ -134,7 +134,7 @@ public class Demo {
         System.out.println("***************************************************************************************");
 
 // test observer
-        System.out.println("*************observer demo start***************************************************");
+        System.out.println("******************* Observer Design Pattern *******************");
         MedicineBuilder medicineBuilder_1 = new MedicineBuilder(1, "Aspirin", 150.0, MedicineCategory.OverTheCounter,"Bayer");
         MedicineAPI medicine1= MedicineFactory.getInstance().getObject(medicineBuilder_1);
         MedicineBuilder medicineBuilder_2  = new MedicineBuilder(2, "Tylenol", 200.0, MedicineCategory.OverTheCounter, "Johnson & Johnson");
