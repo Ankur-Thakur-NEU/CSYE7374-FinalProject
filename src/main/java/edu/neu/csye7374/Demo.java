@@ -118,24 +118,40 @@ public class Demo {
 
 // test observer
         System.out.println("*************observer demo start********");
+        Medicine medicine1 = new Medicine(1, "Aspirin", 150.0, "Bayer", MedicineCategory.OverTheCounter);
+        Medicine medicine2 = new Medicine(2, "Tylenol", 200.0, "Johnson & Johnson", MedicineCategory.OverTheCounter);
+        Medicine medicine3 = new Medicine(3, "Advil", 180.0, "Pfizer", MedicineCategory.OverTheCounter);
+
+        // Create a new Order
         Order order = new Order();
-        System.out.println(order);
         order.setDeliveryType(DeliveryType.Delivery);
-        medicineBuilder2 = new MedicineBuilder(1, "Dolo", 100, MedicineCategory.OverTheCounter, "abc labs");
-        medicine=MedicineFactory.getInstance().getObject(medicineBuilder2);
-        order.addMedicine(medicine);
-        System.out.println(order);
-        medicinelist.add((Medicine)medicine);
-        medicineBuilder2 = new MedicineBuilder(2, "ser", 102, MedicineCategory.OverTheCounter, "abc labs");
-        medicine=MedicineFactory.getInstance().getObject(medicineBuilder2);
-        order.addMedicine(medicine);
-        System.out.println(order);
-        medicinelist.add((Medicine)medicine);
-        medicineBuilder2 = new MedicineBuilder(1, "mass", 30100, MedicineCategory.OverTheCounter, "abc labs");
-        medicine=MedicineFactory.getInstance().getObject(medicineBuilder2);
-        order.addMedicine(medicine);
-        System.out.println(order);
-        medicinelist.add((Medicine)medicine);
+
+        // Add Medicine to the Order
+        System.out.println("Adding Medicine1 to the order...");
+        order.addMedicine(medicine1);
+        System.out.println("Order cost: " + order.getOrderCost());
+        System.out.println("Order quantity: " + order.getCount());
+        System.out.println("Order shipping cost: " + order.getShippingCost());
+        System.out.println("Order discount: " + order.getDiscount());
+        System.out.println("Order total: " + order.getTotal());
+
+        // Add Medicine2 to the Order
+        System.out.println("\nAdding Medicine2 to the order...");
+        order.addMedicine(medicine2);
+        System.out.println("Order cost: " + order.getOrderCost());
+        System.out.println("Order quantity: " + order.getCount());
+        System.out.println("Order shipping cost: " + order.getShippingCost());
+        System.out.println("Order discount: " + order.getDiscount());
+        System.out.println("Order total: " + order.getTotal());
+
+        // Add Medicine3 to the Order
+        System.out.println("\nAdding Medicine3 to the order...");
+        order.addMedicine(medicine3);
+        System.out.println("Order cost: " + order.getOrderCost());
+        System.out.println("Order quantity: " + order.getCount());
+        System.out.println("Order shipping cost: " + order.getShippingCost());
+        System.out.println("Order discount: " + order.getDiscount());
+        System.out.println("Order total: " + order.getTotal());
 
         System.out.println("*************observer demo start end********");
         //Test for facade pattern and decorator pattern
