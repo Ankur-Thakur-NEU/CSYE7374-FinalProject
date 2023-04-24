@@ -135,43 +135,24 @@ public class Demo {
 
 // test observer
         System.out.println("******************* Observer and state Design Pattern *******************");
-        MedicineBuilder medicineBuilder_1 = new MedicineBuilder(1, "Aspirin", 150.0, MedicineCategory.OverTheCounter,"Bayer");
-        MedicineAPI medicine1= MedicineFactory.getInstance().getObject(medicineBuilder_1);
-        MedicineBuilder medicineBuilder_2  = new MedicineBuilder(2, "Tylenol", 200.0, MedicineCategory.OverTheCounter, "Johnson & Johnson");
-        MedicineAPI medicine2= MedicineFactory.getInstance().getObject(medicineBuilder_2);
-        MedicineBuilder medicineBuilder_3  = new MedicineBuilder(3, "Advil", 1800.0, MedicineCategory.OverTheCounter, "Pfizer");
-        MedicineAPI medicine3= MedicineFactory.getInstance().getObject(medicineBuilder_3);
-
+        Medicine medicine1 = new MedicineBuilder(1, "Aspirin", 150.0, MedicineCategory.OverTheCounter,"Bayer").buildObject();
+        Medicine medicine2  = new MedicineBuilder(2, "Tylenol", 200.0, MedicineCategory.OverTheCounter, "Johnson & Johnson").buildObject();
+        Medicine medicine3  = new MedicineBuilder(3, "Advil", 1800.0, MedicineCategory.OverTheCounter, "Pfizer").buildObject();
         // Create a new Order
         Order order = new Order();
         order.setDeliveryType(DeliveryType.Delivery);
-
         // Add Medicine to the Order
         System.out.println("Adding Medicine1 to the order...");
-        order.addMedicine((Medicine)medicine1);
-        System.out.println("Order cost: " + order.getOrderCost());
-        System.out.println("Order quantity: " + order.getCount());
-        System.out.println("Order shipping cost: " + order.getShippingCost());
-        System.out.println("Order discount: " + order.getDiscount());
-        System.out.println("Order total: " + order.getTotal());
-
+        order.addMedicine(medicine1);
+        System.out.println(order);
         // Add Medicine2 to the Order
         System.out.println("\nAdding Medicine2 to the order...");
-        order.addMedicine((Medicine)medicine2);
-        System.out.println("Order cost: " + order.getOrderCost());
-        System.out.println("Order quantity: " + order.getCount());
-        System.out.println("Order shipping cost: " + order.getShippingCost());
-        System.out.println("Order discount: " + order.getDiscount());
-        System.out.println("Order total: " + order.getTotal());
-
+        order.addMedicine(medicine2);
+        System.out.println(order);
         // Add Medicine3 to the Order
         System.out.println("\nAdding Medicine3 to the order...");
-        order.addMedicine((Medicine)medicine3);
-        System.out.println("Order cost: " + order.getOrderCost());
-        System.out.println("Order quantity: " + order.getCount());
-        System.out.println("Order shipping cost: " + order.getShippingCost());
-        System.out.println("Order discount: " + order.getDiscount());
-        System.out.println("Order total: " + order.getTotal());
+        order.addMedicine(medicine3);
+        System.out.println(order);
         order.orderConfirmed();
         order.orderDelivered();
         order.orderDispatched();

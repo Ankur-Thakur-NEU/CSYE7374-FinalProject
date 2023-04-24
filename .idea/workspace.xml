@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a6232ff-3d1d-44f1-a2c2-1b85ccf3172e" name="Changes" comment="updated observer demo">
+    <list default="true" id="7a6232ff-3d1d-44f1-a2c2-1b85ccf3172e" name="Changes" comment="updated observer demo to observer and state demo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Demo.java" afterDir="false" />
     </list>
@@ -84,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681783797812</updated>
-      <workItem from="1682344636599" duration="15180000" />
+      <workItem from="1682344636599" duration="16172000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed Compilation error">
       <created>1681783900119</created>
@@ -107,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682367791678</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="updated observer demo to observer and state demo">
+      <created>1682374286995</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682374287011</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +135,7 @@
     <MESSAGE value="Fixed Compilation error" />
     <MESSAGE value="Added Driver Class" />
     <MESSAGE value="updated observer demo" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated observer demo" />
+    <MESSAGE value="updated observer demo to observer and state demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated observer demo to observer and state demo" />
   </component>
 </project>
