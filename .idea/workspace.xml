@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a6232ff-3d1d-44f1-a2c2-1b85ccf3172e" name="Changes" comment="Added Driver Class">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Adapter/Manufacturer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Adapter/ManufacturerObjectAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Demo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Observer/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/Observer/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/State/CloseOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/State/CloseOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/State/OrderConfirmed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/State/OrderConfirmed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/State/OrderDelivered.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/State/OrderDelivered.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/State/OrderDispatched.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/State/OrderDispatched.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/State/OrderStateAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/State/OrderStateAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/State/StartOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye7374/State/StartOrder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,32 +28,29 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="2Oa1HyvGi6waSdr5CLw1yE8udJm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/aamrah/Desktop/Courses/dp/Project-New/CSYE7374-FinalProject/src/main/java/edu/neu/csye7374&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Tarun/Desktop/CSYE7374-FinalProject/src/main/java/edu/neu/csye7374",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tarun\Desktop\CSYE7374-FinalProject\src\main\java\edu\neu\csye7374" />
+      <recent name="C:\Users\Tarun\Desktop\CSYE7374-FinalProject\src\main\java\edu\neu\csye7374\Adapter" />
       <recent name="$PROJECT_DIR$/src/main/java/edu/neu/csye7374" />
     </key>
   </component>
@@ -91,6 +82,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681783797812</updated>
+      <workItem from="1682344636599" duration="1755000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed Compilation error">
       <created>1681783900119</created>
@@ -108,6 +100,9 @@
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
