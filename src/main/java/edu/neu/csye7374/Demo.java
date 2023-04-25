@@ -19,13 +19,13 @@ import edu.neu.csye7374.Prototype.StoreDeliveryType;
 import edu.neu.csye7374.Prototype.StorePickUp;
 import edu.neu.csye7374.Strategy.DiscountStrategy;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Demo {
     public static void main(){
-        //Builder design pattern for medicines
+
+        //Test for builder pattern - using factory and singleton
         System.out.println("******************* Builder design pattern******************* ");
         Pharmacy pharmacy = new Pharmacy("My Pharmacy");
         // Add some medicines
@@ -35,12 +35,17 @@ public class Demo {
         Medicine amoxicillin = new MedicineBuilder(2,"Amoxicillin", 20.0,
                 MedicineCategory.Prescription, "XYZ Pharma")
                 .buildObject();
+        Medicine nyquil = new MedicineBuilder(2,"Nyquil", 20.0,
+                MedicineCategory.Prescription, "ABC Pharma")
+                .buildObject();
         pharmacy.itemList.add(paracetamol);
         pharmacy.itemList.add(amoxicillin);
 
         // Add some employees
         Pharmacist pharmacist1 = new PharmacistBuilder(1,  "Alice", "Smith",30, 5000.0);
+        Pharmacist pharmacist2 = new PharmacistBuilder(1,  "Jane", "Doe",25, 15000.0);
         pharmacy.personList.add(pharmacist1);
+        pharmacy.personList.add(pharmacist2);
 
         // Print out pharmacy details
         System.out.println("Pharmacy Name: " + pharmacy.name);
@@ -55,6 +60,7 @@ public class Demo {
                 System.out.println(pharmacist.getFirstName() + " " + pharmacist.getLastName() + " (Pharmacist)");
             }
         }
+
         //Facade design pattern
         System.out.println("******************* Facade design pattern******************* ");
         PharmacyFacade pharmacyFacade = new PharmacyFacade("My Pharmacy");
@@ -69,7 +75,6 @@ public class Demo {
         PharmacistBuilder pharmacistBuilder = new PharmacistBuilder(1, "John",
                 "Doe", 25, 50000);
         pharmacyFacade.addPharmacist(pharmacistBuilder);
-
         PharmacistBuilder pharmacistBuilder1 = new PharmacistBuilder(2, "Alisha",
                 "Mary", 27, 100000);
         pharmacyFacade.addPharmacist(pharmacistBuilder1);
@@ -77,35 +82,34 @@ public class Demo {
         pharmacyFacade.sortMedicines(pharmacyFacade.pharmacy);
         pharmacyFacade.sortEmployees();
 
-        //Bridge design pattern
-        System.out.println("******************* Bridge design pattern******************* ");
-        Medicine paracetamol1 = new MedicineBuilder(1, "Paracetamol",
-                10.0, MedicineCategory.OverTheCounter, "ABC Pharma")
-                .buildObject();
-        Medicine amoxicillin1 = new MedicineBuilder(2,"Amoxicillin", 20.0,
-                MedicineCategory.Prescription, "XYZ Pharma")
-                .buildObject();
-        Pharmacist pharmacist = new Pharmacist();
-        MedicalService brandedDispenser = new BrandedMedicineDispenser(paracetamol1, pharmacist);
-        brandedDispenser.dispenseMedicine();
-        MedicalService genericDispenser = new GenericMedicineDispenser(amoxicillin1, pharmacist);
-        genericDispenser.dispenseMedicine();
-
-
-
-
-        List<Medicine> medicinelist = new ArrayList<>();
-
+        // Decorator Design Pattern
         System.out.println("******************* Decorator Design Pattern *******************");
-
-        // Decortor Design Pattern
-        MedicineAPI decoratorMedicine=  new Medicine(101, "Aspirin", 150.0, "Bayer", MedicineCategory.OverTheCounter);
-        decoratorMedicine= new GiftcardDecorator(decoratorMedicine);
+        MedicineAPI decoratorMedicine;
+        decoratorMedicine= new GiftcardDecorator(paracetamol);
         System.out.println("Gift card has been added :\n"+decoratorMedicine.medicineDescription());
         decoratorMedicine= new HealthKitDecorator(decoratorMedicine);
         System.out.println("Health Kit has been added:"+decoratorMedicine.medicineDescription());
 
-        //Test for builder pattern - using factory and singleton
+        //Test for command pattern
+        System.out.println("******************* Command Design Pattern *******************");
+        List<Medicine> medicinelist = new ArrayList<>();
+        //creating medicine list before testing
+
+        medicinelist.add(paracetamol);
+        medicinelist.add(nyquil);
+        medicinelist.add(amoxicillin);
+
+        Invoker invoker = new Invoker();
+        invoker.placeOrder(medicinelist);
+        invoker.subscribeOrder(medicinelist);
+
+        //Bridge design pattern
+        System.out.println("******************* Bridge design pattern******************* ");
+        Pharmacist pharmacist = new Pharmacist();
+        MedicalService brandedDispenser = new BrandedMedicineDispenser(paracetamol, pharmacist);
+        brandedDispenser.dispenseMedicine();
+        MedicalService genericDispenser = new GenericMedicineDispenser(amoxicillin, pharmacist);
+        genericDispenser.dispenseMedicine();
 
         //Test for prototype pattern
         System.out.println("******************* Prototype Design Pattern *******************");
@@ -125,6 +129,39 @@ public class Demo {
         storePickUp2.setDeliveryCost(0.0);
         System.out.println(storePickUp2.toString());
 
+        //Test observer and state design pattern
+        System.out.println("******************* Observer and state Design Pattern *******************");
+        // Create a new Order
+        Order order = new Order();
+        order.setDeliveryType(DeliveryType.Delivery);
+        // Add Medicine to the Order
+        System.out.println("Adding Medicine1 to the order...");
+        order.addMedicine(paracetamol);
+        System.out.println(order);
+        // Add Medicine2 to the Order
+        System.out.println("\nAdding Medicine2 to the order...");
+        order.addMedicine(amoxicillin);
+        System.out.println(order);
+        // Add Medicine3 to the Order
+        System.out.println("\nAdding Medicine3 to the order...");
+        order.addMedicine(nyquil);
+        System.out.println(order);
+        order.orderConfirmed();
+        order.orderDelivered();
+        order.orderDispatched();
+        order.orderDelivered();
+        order.closeOrder();
+
+        //Test for strategy design pattern
+        System.out.println("******************* Strategy Design Pattern *******************");
+        System.out.println("Medicine \""+paracetamol.getMedicineName()+"\" price before discount "+paracetamol.getMedicinePrice());
+        double price;
+        for(DiscountStrategy strategy : Pharmacy.getStrategyAPIMap().keySet()){
+            pharmacy.setStrategy(strategy);
+            price= paracetamol.runStrategy();
+            System.out.println("Price of \""+paracetamol.getMedicineName()+"\" after "+strategy+" :"+price);
+        }
+
         //Test for adapter pattern
         System.out.println("******************* Adapter Design Pattern *******************");
         MedicineBuilder medicineBuilder2 = new MedicineBuilder(1, "Dolo", 10, MedicineCategory.OverTheCounter, "abc labs");
@@ -135,87 +172,8 @@ public class Demo {
                 .setYearsOfManufacturing(52)
                 .setProductsManufactured(10);
         ManufacturerObjectAdapter manufacturerAdapter = new ManufacturerObjectAdapter(manufacturer,medicine);
-
         System.out.println(medicine);
-        System.out.println("*Demonstrating of Adapter pattern to adapt manufacturer legacy class with Medicine Interface and printing their object*");
-
+        System.out.println("***Demonstrating of Adapter pattern to adapt manufacturer legacy class with Medicine Interface and printing their object***");
         System.out.println(manufacturerAdapter);
-        System.out.println("***************************************************************************************");
-
-// test observer
-        System.out.println("******************* Observer and state Design Pattern *******************");
-        Medicine medicine1 = new MedicineBuilder(1, "Aspirin", 150.0, MedicineCategory.OverTheCounter,"Bayer").buildObject();
-        Medicine medicine2  = new MedicineBuilder(2, "Tylenol", 200.0, MedicineCategory.OverTheCounter, "Johnson & Johnson").buildObject();
-        Medicine medicine3  = new MedicineBuilder(3, "Advil", 1800.0, MedicineCategory.OverTheCounter, "Pfizer").buildObject();
-        // Create a new Order
-        Order order = new Order();
-        order.setDeliveryType(DeliveryType.Delivery);
-        // Add Medicine to the Order
-        System.out.println("Adding Medicine1 to the order...");
-        order.addMedicine(medicine1);
-        System.out.println(order);
-        // Add Medicine2 to the Order
-        System.out.println("\nAdding Medicine2 to the order...");
-        order.addMedicine(medicine2);
-        System.out.println(order);
-        // Add Medicine3 to the Order
-        System.out.println("\nAdding Medicine3 to the order...");
-        order.addMedicine(medicine3);
-        System.out.println(order);
-        order.orderConfirmed();
-        order.orderDelivered();
-        order.orderDispatched();
-        order.orderDelivered();
-        order.closeOrder();
-
-        System.out.println("*************observer demo  end***************************************");
-        //Test for facade pattern and decorator pattern
-
-
-        //Test for command pattern
-        System.out.println("******************* Command Design Pattern *******************");
-        //creating medicine list before testing
-        System.out.println("******Command design pattern********");
-        Medicine ciplox = new Medicine();
-        ciplox.setMedicineName("ciplox");
-        ciplox.setMedicinePrice(11);
-
-        Medicine aspirin = new Medicine();
-        aspirin.setMedicineName("Aspirin");
-        aspirin.setMedicinePrice(12);
-
-        medicinelist.add(ciplox);
-        medicinelist.add(aspirin);
-        Invoker invoker = new Invoker();
-        invoker.placeOrder(medicinelist);
-        invoker.subscribeOrder(medicinelist);
-
-
-        Pharmacy cvs = new Pharmacy("CVS");
-
-//        EmployeeBuilder emploee = new EmployeeBuilder(vals);
-
-        //Test for State Pattern
-//        System.out.println("******************* State Design Pattern *******************");
-//        //Dummy order
-////        Order orderForState = new Order();
-////        orderForState.orderConfirmed();
-////        orderForState.orderDelivered();
-////        orderForState.orderDispatched();
-////        orderForState.orderDelivered();
-////        orderForState.closeOrder();
-//
-
-        //Test for Strategy Pattern
-        System.out.println("******************* Strategy Design Pattern *******************");
-
-        System.out.println("Medicine \""+ciplox.getMedicineName()+"\" price before discount "+ciplox.getMedicinePrice());
-        double price =0;
-        for(DiscountStrategy strategy : Pharmacy.getStrategyAPIMap().keySet()){
-            cvs.setStrategy(strategy);
-            price= ((Medicine)ciplox).runStrategy();
-            System.out.println("Price of \""+ciplox.getMedicineName()+"\" after "+strategy+" :"+price);
-        }
-
     }
 }
