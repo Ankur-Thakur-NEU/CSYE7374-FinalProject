@@ -130,7 +130,7 @@ public class Demo {
         System.out.println(storePickUp2.toString());
 
         //Test observer and state design pattern
-        System.out.println("******************* Observer and state Design Pattern *******************");
+        System.out.println("******************* Observer Design Pattern *******************");
         // Create a new Order
         Order order = new Order();
         order.setDeliveryType(DeliveryType.Delivery);
@@ -145,6 +145,8 @@ public class Demo {
         // Add Medicine3 to the Order
         System.out.println("\nAdding Medicine3 to the order...");
         order.addMedicine(nyquil);
+        System.out.println("******************* State Design Pattern *******************");
+
         System.out.println(order);
         order.orderConfirmed();
         order.orderDelivered();
